@@ -79,7 +79,7 @@
   </div>
 </section>
 
-  <section x-data="thisComponent" class="is-section--wrapper" data-aos="fade-down">
+  <section class="is-section--wrapper" data-aos="fade-down">
     <div class="is-content--wrapper">
       <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XSy20XrwI9g?si=9dBUqRmNXNmfZq4q&amp;controls=0&amp;autoplay=0&amp;vq=hd1080&amp;rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
@@ -205,23 +205,42 @@
               <div class="card card-stats">
                 <div class="card-header">
                   <h6 id="lkpm-title" class="mb-0 color-dark-cyan">Laporan Kegiatan Penanaman Modal (LKPM)</h6>
-                  <div class="dropdown-center">
-                    <button type="button" class="btn is-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pilih Tahun</button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#" data-canvas="lkpm-semua">Semua</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="lkpm-2024">2024</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="lkpm-2023">2023</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="lkpm-2022">2022</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="lkpm-2021">2021</a></li>
-                    </ul>
-                  </div>
+                  <ul id="pills-lkpm-tab" class="nav nav-pills" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm active" id="pills-lkpm-semua-tab" data-bs-toggle="pill" data-bs-target="#pills-lkpm-semua" type="button" role="tab" aria-controls="pills-lkpm-semua" aria-selected="true">Semua</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-lkpm-2024-tab" data-bs-toggle="pill" data-bs-target="#pills-lkpm-2024" type="button" role="tab" aria-controls="pills-lkpm-2024" aria-selected="false">2024</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-lkpm-2023-tab" data-bs-toggle="pill" data-bs-target="#pills-lkpm-2023" type="button" role="tab" aria-controls="pills-lkpm-2023" aria-selected="false">2023</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-lkpm-2022-tab" data-bs-toggle="pill" data-bs-target="#pills-lkpm-2022" type="button" role="tab" aria-controls="pills-lkpm-2022" aria-selected="false">2022</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-lkpm-2021-tab" data-bs-toggle="pill" data-bs-target="#pills-lkpm-2021" type="button" role="tab" aria-controls="pills-lkpm-2021" aria-selected="false">2021</button>
+                    </li>
+                  </ul>
                 </div>
-                <div class="card-body">
-                  <canvas id="lkpm-semua" height="350"></canvas>
-                  <canvas id="lkpm-2024" height="350" style="display: none;"></canvas>
-                  <canvas id="lkpm-2023" height="350" style="display: none;"></canvas>
-                  <canvas id="lkpm-2022" height="350" style="display: none;"></canvas>
-                  <canvas id="lkpm-2021" height="350" style="display: none;"></canvas>
+                <div>
+                  <div class="tab-content" id="pills-lkpm-tabContent">
+                    <div class="tab-pane fade show active" id="pills-lkpm-semua" role="tabpanel" aria-labelledby="pills-lkpm-semua-tab" tabindex="0">
+                      <canvas id="lkpm-semua" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-lkpm-2024" role="tabpanel" aria-labelledby="pills-lkpm-2024-tab" tabindex="0">
+                      <canvas id="lkpm-2024" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-lkpm-2023" role="tabpanel" aria-labelledby="pills-lkpm-2023-tab" tabindex="0">
+                      <canvas id="lkpm-2023" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-lkpm-2022" role="tabpanel" aria-labelledby="pills-lkpm-2022-tab" tabindex="0">
+                      <canvas id="lkpm-2022" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-lkpm-2021" role="tabpanel" aria-labelledby="pills-lkpm-2021-tab" tabindex="0">
+                      <canvas id="lkpm-2021" height="350"></canvas>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -229,23 +248,42 @@
               <div class="card card-stats">
                 <div class="card-header">
                   <h6 id="mikro-title" class="mb-0 color-dark-cyan">Usaha Mikro</h6>
-                  <div class="dropdown-center">
-                    <button type="button" class="btn is-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pilih Tahun</button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#" data-canvas="mikro-semua">Semua</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2024">2024</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2023">2023</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2022">2022</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2021">2021</a></li>
-                    </ul>
-                  </div>
+                  <ul id="pills-mikro-tab" class="nav nav-pills" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm active" id="pills-mikro-semua-tab" data-bs-toggle="pill" data-bs-target="#pills-mikro-semua" type="button" role="tab" aria-controls="pills-mikro-semua" aria-selected="true">Semua</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-mikro-2024-tab" data-bs-toggle="pill" data-bs-target="#pills-mikro-2024" type="button" role="tab" aria-controls="pills-mikro-2024" aria-selected="false">2024</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-mikro-2023-tab" data-bs-toggle="pill" data-bs-target="#pills-mikro-2023" type="button" role="tab" aria-controls="pills-mikro-2023" aria-selected="false">2023</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-mikro-2022-tab" data-bs-toggle="pill" data-bs-target="#pills-mikro-2022" type="button" role="tab" aria-controls="pills-mikro-2022" aria-selected="false">2022</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="btn btn-sm" id="pills-mikro-2021-tab" data-bs-toggle="pill" data-bs-target="#pills-mikro-2021" type="button" role="tab" aria-controls="pills-mikro-2021" aria-selected="false">2021</button>
+                    </li>
+                  </ul>
                 </div>
-                <div class="card-body">
-                  <canvas id="mikro-semua" height="350"></canvas>
-                  <canvas id="mikro-2024" height="350" style="display: none;"></canvas>
-                  <canvas id="mikro-2023" height="350" style="display: none;"></canvas>
-                  <canvas id="mikro-2022" height="350" style="display: none;"></canvas>
-                  <canvas id="mikro-2021" height="350" style="display: none;"></canvas>
+                <div>
+                  <div class="tab-content" id="pills-mikro-tabContent">
+                    <div class="tab-pane fade show active" id="pills-mikro-semua" role="tabpanel" aria-labelledby="pills-mikro-semua-tab" tabindex="0">
+                      <canvas id="mikro-semua" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-mikro-2024" role="tabpanel" aria-labelledby="pills-mikro-2024-tab" tabindex="0">
+                      <canvas id="mikro-2024" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-mikro-2023" role="tabpanel" aria-labelledby="pills-mikro-2023-tab" tabindex="0">
+                      <canvas id="mikro-2023" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-mikro-2022" role="tabpanel" aria-labelledby="pills-mikro-2022-tab" tabindex="0">
+                      <canvas id="mikro-2022" height="350"></canvas>
+                    </div>
+                    <div class="tab-pane fade" id="pills-mikro-2021" role="tabpanel" aria-labelledby="pills-mikro-2021-tab" tabindex="0">
+                      <canvas id="mikro-2021" height="350"></canvas>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -305,7 +343,7 @@
     </div>
   </section>
 
-  <section x-data="thisComponent" class="is-section--wrapper" data-aos="fade-down">
+  <section class="is-section--wrapper" data-aos="fade-down">
     <div class="is-content--wrapper">
       <iframe width="100%" height="550" src="https://www.youtube.com/embed/v2cDUwykBb8?si=j-5fkrbYwrsIoz3L&amp;controls=0&amp;autoplay=0&amp;vq=hd1080&amp;rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
@@ -1418,51 +1456,56 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      initializeCanvas();
+        initializeCanvas();
     });
 
     function initializeCanvas() {
-      const dropdownItems = document.querySelectorAll(".dropdown-item");
+        const dropdownItems = document.querySelectorAll(".dropdown-item");
 
-      dropdownItems.forEach(function(item) {
-        item.addEventListener("click", function(event) {
-          event.preventDefault();
-          const selectedCanvasId = this.dataset.canvas;
-          toggleCanvas(selectedCanvasId);
+        dropdownItems.forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                event.preventDefault();
+                const selectedCanvasId = this.dataset.canvas;
+                toggleCanvas(selectedCanvasId);
+            });
         });
-      });
     }
 
     function toggleCanvas(canvasId) {
-      const canvases = document.querySelectorAll("canvas");
-      canvases.forEach(function(canvas) {
-        canvas.style.display = canvas.id === canvasId ? "block" : "none";
-      });
-      updateTitle(canvasId);
+        const canvases = document.querySelectorAll("canvas");
+        canvases.forEach(function(canvas) {
+            if (canvas.id === canvasId || canvasId === 'lkpm-semua' || canvasId === 'mikro-semua') {
+                canvas.style.display = "block";
+            } else {
+                canvas.style.display = "none";
+            }
+        });
+        updateTitle(canvasId);
     }
 
     function updateTitle(selectedCanvasId) {
-      let defaultTitle = "";
-      let titleElement = null;
+        let defaultTitle = "";
+        let titleElement = null;
 
-      if (selectedCanvasId.includes("lkpm")) {
-        defaultTitle = "Laporan Kegiatan Penanaman Modal (LKPM)";
-        titleElement = document.getElementById('lkpm-title');
-      } else if (selectedCanvasId.includes("mikro")) {
-        defaultTitle = "Usaha Mikro";
-        titleElement = document.getElementById('mikro-title');
-      }
-
-      if (titleElement) {
-        if (selectedCanvasId.includes("semua")) {
-          titleElement.textContent = `${defaultTitle} 2022-2024`;
-        } else {
-          const year = selectedCanvasId.replace(selectedCanvasId.includes("lkpm") ? "lkpm-" : "mikro-", "");
-          titleElement.textContent = `${defaultTitle} ${year}`;
+        if (selectedCanvasId.includes("lkpm")) {
+            defaultTitle = "Laporan Kegiatan Penanaman Modal (LKPM)";
+            titleElement = document.getElementById('lkpm-title');
+        } else if (selectedCanvasId.includes("mikro")) {
+            defaultTitle = "Usaha Mikro";
+            titleElement = document.getElementById('mikro-title');
         }
-      }
+
+        if (titleElement) {
+            if (selectedCanvasId.includes("semua")) {
+                titleElement.textContent = `${defaultTitle} 2022-2024`;
+            } else {
+                const year = selectedCanvasId.replace(selectedCanvasId.includes("lkpm") ? "lkpm-" : "mikro-", "");
+                titleElement.textContent = `${defaultTitle} ${year}`;
+            }
+        }
     }
-  </script>
+</script>
+
   <!-- javascript -->
 
   <!-- AlpineJS data -->
