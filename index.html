@@ -79,10 +79,16 @@
   </div>
 </section>
 
-  <section x-data="thisComponent" class="is-section--wrapper is-section--box is-stats" data-aos="fade-down">
+  <section x-data="thisComponent" class="is-section--wrapper" data-aos="fade-down">
+    <div class="is-content--wrapper">
+      <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XSy20XrwI9g?si=9dBUqRmNXNmfZq4q&amp;controls=0&amp;autoplay=0&amp;vq=hd1080&amp;rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section x-data="thisComponent" class="is-section--wrapper is-section--box is-stats">
     <div class="container">
       <div class="is-content--wrapper">
-        <div class="is-stats--content row mb-3">
+        <div class="is-stats--content row mb-3" data-aos="fade-up">
           <h4 class="color-main fw-bold text-start mb-3">Total Izin Terbit</h4>
           <template x-for="(stat, index) in izin" :key="index">
             <div class="col-md-3 mb-4">
@@ -110,7 +116,7 @@
             </div>
           </template>
         </div>
-        <div class="is-stats--content row mb-3">
+        <div class="is-stats--content row mb-3" data-aos="fade-up">
           <h4 class="color-main fw-bold text-start mb-3">Total Perizinan Berusaha OSS RBA</h4>
           <template x-for="(stat, index) in ossrba" :key="index">
             <div class="col-md-3 mb-4">
@@ -138,7 +144,7 @@
             </div>
           </template>
         </div>
-        <div class="is-stats--content row mb-3">
+        <div class="is-stats--content row mb-3" data-aos="fade-up">
           <h4 class="color-main fw-bold text-start mb-3">Total Pengunjung MPP</h4>
           <template x-for="(stat, index) in mpp" :key="index">
             <div class="col-md-3 mb-4">
@@ -167,7 +173,7 @@
           </template>
         </div>
         <div class="is-stats--chart">
-          <div class="is-upside">
+          <div class="is-upside" data-aos="fade-up">
             <div class="is-content--title">
               <h2 class="is-section--title">Realisasi Investasi</h2>
               <h6 class="is-section--description">Total Realisasi Investasi (LKPM dan Usaha Mikro)</h6>
@@ -184,7 +190,7 @@
               </li>
             </ul>
           </div>
-          <div id="pills-tabContent" class="tab-content">
+          <div id="pills-tabContent" class="tab-content" data-aos="fade-up">
             <div id="pills-investasi" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pills-investasi-tab" tabindex="0">
               <div class="card card-stats">
                 <div class="card-header">
@@ -245,8 +251,63 @@
             </div>
           </div>
 
+          <div class="is-upside" data-aos="fade-up">
+            <div class="is-content--title">
+              <h2 class="is-section--title">Realisasi Anggaran MPP</h2>
+              <h6 class="is-section--description">Total Realisasi Anggaran Mal Pelayanan Publik</h6>
+            </div>
+            <ul id="pills-tab" class="nav nav-pills" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button type="button" id="pills-anggaran2020-tab" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-anggaran2020" role="tab" aria-controls="pills-anggaran2020" aria-selected="false">2020</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button type="button" id="pills-anggaran2021-tab" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-anggaran2021" role="tab" aria-controls="pills-anggaran2021" aria-selected="false">2021</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button type="button" id="pills-anggaran2022-tab" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-anggaran2022" role="tab" aria-controls="pills-anggaran2022" aria-selected="false">2022</button>
+              </li>
+            </ul>
+          </div>
+          <div id="pills-tabContent2" class="tab-content" data-aos="fade-up">
+            <div id="pills-anggaran2020" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pills-anggaran2020-tab" tabindex="0">
+              <div class="card card-stats">
+                <div class="card-header">
+                  <h6 id="anggaran2021-title" class="mb-0 color-dark-cyan">Anggaran Pengelolaan Mal Pelayanan Publik</h6>
+                </div>
+                <div class="card-body">
+                  <canvas id="anggaran2020" height="350"></canvas>
+                </div>
+              </div>
+            </div>
+            <div id="pills-anggaran2021" class="tab-pane fade" role="tabpanel" aria-labelledby="pills-anggaran2021-tab" tabindex="0">
+              <div class="card card-stats">
+                <div class="card-header">
+                  <h6 id="anggaran2021-title" class="mb-0 color-dark-cyan">Anggaran Pengelolaan Mal Pelayanan Publik</h6>
+                </div>
+                <div class="card-body">
+                  <canvas id="anggaran2021" height="350"></canvas>
+                </div>
+              </div>
+            </div>
+            <div id="pills-anggaran2022" class="tab-pane fade" role="tabpanel" aria-labelledby="pills-anggaran2022-tab" tabindex="0">
+              <div class="card card-stats">
+                <div class="card-header">
+                  <h6 id="anggaran2022-title" class="mb-0 color-dark-cyan">Anggaran Pengelolaan Mal Pelayanan Publik</h6>
+                </div>
+                <div class="card-body">
+                  <canvas id="anggaran2022" height="350"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section x-data="thisComponent" class="is-section--wrapper" data-aos="fade-down">
+    <div class="is-content--wrapper">
+      <iframe width="100%" height="550" src="https://www.youtube.com/embed/v2cDUwykBb8?si=j-5fkrbYwrsIoz3L&amp;controls=0&amp;autoplay=0&amp;vq=hd1080&amp;rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -1173,6 +1234,184 @@
         maintainAspectRatio: false,
         bezierCurve: true,
         barThickness: 50,
+      }
+    });
+  </script>
+
+  <script>
+    let totalAnggaran2020 = document
+      .getElementById('anggaran2020')
+      .getContext('2d');
+    let totalAnggaran2020Chart = new Chart(totalAnggaran2020, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          "Papan Nama MPP","Launching MPP","Jasa Pentas Seni","Jasa Publikasi","Cetak Undangan","Sewa Display","Rak Arsip","Komputer/PC","Printer","Laptop","PABX","Meja","Kursi","Sofa","Partisi Counter Pelayanan",
+        ],
+        datasets: [
+          {
+            tension: .3,
+            label: 'Anggaran',
+            data: [
+              34780000,23250000,6000000,5500000,500000,11250000,7000000,160000000,12000000,24500000,15000000,18000000,9000000,30000000,200000000,
+            ],
+            borderWidth: 1,
+            backgroundColor: ['rgba(55, 154, 214, 0.7)', 'rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.7)', 'rgba(0, 0, 255, 0.3)', 'rgba(255, 0, 255, 0.6)', 'rgba(0, 255, 255, 0.4)', 'rgba(128, 0, 128, 0.9)', 'rgba(255, 165, 0, 0.2)', 'rgba(0, 128, 0, 0.6)', 'rgba(128, 128, 0, 0.5)', 'rgba(128, 0, 0, 0.8)', 'rgba(0, 128, 128, 0.7)', 'rgba(165, 42, 42, 0.4)', 'rgba(0, 0, 128, 0.3)', 'rgba(128, 128, 128, 0.6)'],
+            fill: true,
+            hoverOffset: 4,
+            cutout: 30,
+          },
+        ]
+      },
+      options: {
+        scales: {
+          x: {
+            display: false
+          },
+          y: {
+            display: false
+          },
+        },
+        elements: {
+          point: {
+            radius: 0
+          }
+        },
+        hover: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            position: 'left',
+            labels: {
+              usePointStyle: true,
+              boxWidth: 6,
+              pointStyle: 'circle'
+            }
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: true
+      }
+    });
+  </script>
+  <script>
+    let totalAnggaran2021 = document
+      .getElementById('anggaran2021')
+      .getContext('2d');
+    let totalAnggaran2021Chart = new Chart(totalAnggaran2021, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          "Seragam Batik MPP","Mesin Antrian MPP","UPS","Furniture MPP",
+        ],
+        datasets: [
+          {
+            tension: .3,
+            label: 'Anggaran',
+            data: [
+              1500000,100000000,27000000,188400000,
+            ],
+            borderWidth: 1,
+            backgroundColor: [ 'rgba(189, 32, 77, 0.8)', 'rgba(55, 170, 200, 0.6)', 'rgba(128, 200, 45, 0.9)', 'rgba(20, 100, 220, 0.7)' ],
+            fill: true,
+            hoverOffset: 4,
+            cutout: 30,
+          },
+        ]
+      },
+      options: {
+        scales: {
+          x: {
+            display: false
+          },
+          y: {
+            display: false
+          },
+        },
+        elements: {
+          point: {
+            radius: 0
+          }
+        },
+        hover: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            position: 'left',
+            labels: {
+              usePointStyle: true,
+              boxWidth: 6,
+              pointStyle: 'circle'
+            }
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: true
+      }
+    });
+  </script>
+  <script>
+    let totalAnggaran2022 = document
+      .getElementById('anggaran2022')
+      .getContext('2d');
+    let totalAnggaran2022Chart = new Chart(totalAnggaran2022, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          "Aksesoris Komputer","LCD Monitor Pelayanan","Papan Nama MPP","Partisi Counter Pelayanan","Cetak Undangan","Fotokopi","Booklet","Souvenir","Rapat MPP","Hidangan Tamu","Seragam Launching MPP","Honorarium Launching MPP","Tenaga Keseninan Launching MPP","Jasa Publikasi","Sewa Alat Rumah Tangga","Sewa Audio","Sewa Video Shooting","Sewa Lighting",
+        ],
+        datasets: [
+          {
+            tension: .3,
+            label: 'Anggaran',
+            data: [
+              538000,5000000,30074000,82140000,1000000,297300,3500000,5000000,1000000,21125000,13000000,350000,9000000,12000000,6547500,3000000,2025000,1500000,
+            ],
+            borderWidth: 1,
+            backgroundColor: [ 'rgba(23, 45, 167, 0.8)', 'rgba(201, 63, 14, 0.5)', 'rgba(92, 189, 35, 0.9)', 'rgba(134, 23, 199, 0.6)', 'rgba(10, 210, 180, 0.7)', 'rgba(255, 128, 0, 0.4)', 'rgba(47, 176, 250, 0.8)', 'rgba(181, 90, 34, 0.5)', 'rgba(75, 23, 100, 0.6)', 'rgba(200, 20, 150, 0.3)', 'rgba(40, 120, 80, 0.9)', 'rgba(220, 65, 50, 0.7)', 'rgba(160, 200, 10, 0.6)', 'rgba(100, 20, 180, 0.8)', 'rgba(33, 99, 189, 0.5)', 'rgba(220, 130, 40, 0.4)', 'rgba(70, 180, 20, 0.7)', 'rgba(255, 0, 100, 0.6)' ],
+            fill: true,
+            hoverOffset: 4,
+            cutout: 30,
+          },
+        ]
+      },
+      options: {
+        scales: {
+          x: {
+            display: false
+          },
+          y: {
+            display: false
+          },
+        },
+        elements: {
+          point: {
+            radius: 0
+          }
+        },
+        hover: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            position: 'left',
+            labels: {
+              usePointStyle: true,
+              boxWidth: 6,
+              pointStyle: 'circle'
+            }
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: true
       }
     });
   </script>
