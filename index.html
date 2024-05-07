@@ -87,13 +87,13 @@
           <template x-for="(stat, index) in izin" :key="index">
             <div class="col-md-3 mb-4">
               <div class="card have-bg">
-                <div class="p-3">
+                <div class="p-3 p-md-2 p-lg-3">
                   <h2 class="is-title" x-text="stat.title"></h2>
                   <div class="is-number">
-                    <div class="is-odd col-12 col-lg-6">
+                    <div class="is-odd col-6">
                       <h3 class="is-count" :class="index % 4 === 0 ? 'text-success' : (index % 4 === 1 ? 'text-primary' : (index % 4 === 2 ? 'text-warning' : 'text-info'))" x-text="stat.count"></h3>
                     </div>
-                    <div class="is-even col-12 col-lg-6">
+                    <div class="is-even col-6">
                       <h3 class="is-status">
                         <span class="d-flex align-items-center justify-content-center">
                           <iconify-icon :icon="stat.statusIcon"></iconify-icon>
@@ -115,13 +115,13 @@
           <template x-for="(stat, index) in mpp" :key="index">
             <div class="col-md-3 mb-4">
               <div class="card have-bg">
-                <div class="p-3">
+                <div class="p-3 p-md-2 p-lg-3">
                   <h2 class="is-title" x-text="stat.title"></h2>
                   <div class="is-number">
-                    <div class="is-odd col-12 col-lg-6">
+                    <div class="is-odd col-6">
                       <h3 class="is-count" :class="index % 4 === 0 ? 'text-success' : (index % 4 === 1 ? 'text-primary' : (index % 4 === 2 ? 'text-warning' : 'text-info'))" x-text="stat.count"></h3>
                     </div>
-                    <div class="is-even col-12 col-lg-6">
+                    <div class="is-even col-6">
                       <h3 class="is-status">
                         <span class="d-flex align-items-center justify-content-center">
                           <iconify-icon :icon="stat.statusIcon"></iconify-icon>
@@ -161,21 +161,9 @@
               <div class="card card-stats">
                 <div class="card-header">
                   <h6 id="investasi-title" class="mb-0 color-dark-cyan">Laporan Kegiatan Penanaman Modal (LKPM) dan Usaha Mikro</h6>
-                  <div class="dropdown-center">
-                    <button type="button" class="btn is-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pilih Tahun</button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#" data-canvas="investasi-semua">Semua</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="investasi-2024">2024</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="investasi-2023">2023</a></li>
-                      <li><a class="dropdown-item" href="#" data-canvas="investasi-2022">2022</a></li>
-                    </ul>
-                  </div>
                 </div>
                 <div class="card-body">
-                  <canvas id="investasi-semua" height="350"></canvas>
-                  <canvas id="investasi-2024" height="350" style="display: none;"></canvas>
-                  <canvas id="investasi-2023" height="350" style="display: none;"></canvas>
-                  <canvas id="investasi-2022" height="350" style="display: none;"></canvas>
+                  <canvas id="investasi" height="350"></canvas>
                 </div>
               </div>
             </div>
@@ -190,6 +178,7 @@
                       <li><a class="dropdown-item" href="#" data-canvas="lkpm-2024">2024</a></li>
                       <li><a class="dropdown-item" href="#" data-canvas="lkpm-2023">2023</a></li>
                       <li><a class="dropdown-item" href="#" data-canvas="lkpm-2022">2022</a></li>
+                      <li><a class="dropdown-item" href="#" data-canvas="lkpm-2021">2021</a></li>
                     </ul>
                   </div>
                 </div>
@@ -198,6 +187,7 @@
                   <canvas id="lkpm-2024" height="350" style="display: none;"></canvas>
                   <canvas id="lkpm-2023" height="350" style="display: none;"></canvas>
                   <canvas id="lkpm-2022" height="350" style="display: none;"></canvas>
+                  <canvas id="lkpm-2021" height="350" style="display: none;"></canvas>
                 </div>
               </div>
             </div>
@@ -212,6 +202,7 @@
                       <li><a class="dropdown-item" href="#" data-canvas="mikro-2024">2024</a></li>
                       <li><a class="dropdown-item" href="#" data-canvas="mikro-2023">2023</a></li>
                       <li><a class="dropdown-item" href="#" data-canvas="mikro-2022">2022</a></li>
+                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2021">2021</a></li>
                     </ul>
                   </div>
                 </div>
@@ -220,6 +211,7 @@
                   <canvas id="mikro-2024" height="350" style="display: none;"></canvas>
                   <canvas id="mikro-2023" height="350" style="display: none;"></canvas>
                   <canvas id="mikro-2022" height="350" style="display: none;"></canvas>
+                  <canvas id="mikro-2021" height="350" style="display: none;"></canvas>
                 </div>
               </div>
             </div>
@@ -233,8 +225,8 @@
   <footer class="is-section--wrapper is-section--box is-footer">
   <div class="container">
     <div class="is-content--wrapper">
-      <nav class="d-flex flex-column flex-md-row align-items-start align-items-lg-center justify-content-between">
-        <a href="index.html" class="fw-bold text-decoration-none color-main pb-3 pb-md-0" rel="noopener">DPMPTSP Gunungkidul</a>
+      <nav class="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-between">
+        <a href="index.html" class="fw-bold text-decoration-none color-main" rel="noopener">DPMPTSP Gunungkidul</a>
       </nav>
       <hr />
       <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
@@ -414,20 +406,20 @@
 
   <script>
     let totalInvestasi = document
-      .getElementById('investasi-semua')
+      .getElementById('investasi')
       .getContext('2d');
     let totalInvestasiChart = new Chart(totalInvestasi, {
       type: 'line',
       data: {
         labels: [
-          "Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","October","November","Dessember",
+          "2021","2022","2023","2024",
         ],
         datasets: [
           {
             tension: .3,
             label: 'LKPM',
             data: [
-              324686901322,434500123650,904849111374,409339115378,510999335890,324686901322,434500123650,904849111374,409339115378,510999335890,409339115378,510999335890,
+              127775390787,214184207082,207514690446,5914335018,
             ],
             borderWidth: 1,
             backgroundColor: 'rgba(55, 154, 214, .7)',
@@ -437,226 +429,7 @@
             tension: .3,
             label: 'Usaha Mikro',
             data: [
-              709686901322,834500123650,994849111374,807339115378,680999335890,521686901322,534500123650,709849111374,819339115378,613999335890,513339115378,740999335890,
-            ],
-            borderWidth: 1,
-            backgroundColor: 'rgba(0, 151, 137, .7)',
-            borderColor: 'rgba(255, 255, 255, 1)',
-            fill: true
-          }
-        ]
-      },
-      options: {
-        scales: {
-          x: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          },
-          y: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          }
-        },
-        elements: {
-          point: {
-            radius: 0
-          }
-        },
-        hover: {
-          mode: 'index',
-          intersect: false
-        },
-        plugins: {
-          legend: {
-            labels: {
-              usePointStyle: true,
-              boxWidth: 6,
-              pointStyle: 'circle'
-            }
-          }
-        },
-        responsive: true,
-        maintainAspectRatio: false,
-        bezierCurve: true
-      }
-    });
-  </script>
-  <script>
-    let totalInvestasi2022 = document
-      .getElementById('investasi-2022')
-      .getContext('2d');
-    let totalInvestasi2022Chart = new Chart(totalInvestasi2022, {
-      type: 'line',
-      data: {
-        labels: [
-          "Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","October","November","Dessember",
-        ],
-        datasets: [
-          {
-            tension: .3,
-            label: 'LKPM',
-            data: [
-              324686901322,434500123650,904849111374,409339115378,510999335890,324686901322,434500123650,904849111374,409339115378,510999335890,409339115378,510999335890,
-            ],
-            borderWidth: 1,
-            backgroundColor: 'rgba(55, 154, 214, .7)',
-            borderColor: 'rgba(255, 255, 255, 1)',
-            fill: true
-          }, {
-            tension: .3,
-            label: 'Usaha Mikro',
-            data: [
-              709686901322,834500123650,994849111374,807339115378,680999335890,521686901322,534500123650,709849111374,819339115378,613999335890,513339115378,740999335890,
-            ],
-            borderWidth: 1,
-            backgroundColor: 'rgba(0, 151, 137, .7)',
-            borderColor: 'rgba(255, 255, 255, 1)',
-            fill: true
-          }
-        ]
-      },
-      options: {
-        scales: {
-          x: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          },
-          y: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          }
-        },
-        elements: {
-          point: {
-            radius: 0
-          }
-        },
-        hover: {
-          mode: 'index',
-          intersect: false
-        },
-        plugins: {
-          legend: {
-            labels: {
-              usePointStyle: true,
-              boxWidth: 6,
-              pointStyle: 'circle'
-            }
-          }
-        },
-        responsive: true,
-        maintainAspectRatio: false,
-        bezierCurve: true
-      }
-    });
-  </script>
-  <script>
-    let totalInvestasi2023 = document
-      .getElementById('investasi-2023')
-      .getContext('2d');
-    let totalInvestasi2023Chart = new Chart(totalInvestasi2023, {
-      type: 'line',
-      data: {
-        labels: [
-          "Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","October","November","Dessember",
-        ],
-        datasets: [
-          {
-            tension: .3,
-            label: 'LKPM',
-            data: [
-              324686901322,434500123650,904849111374,409339115378,510999335890,324686901322,434500123650,904849111374,409339115378,510999335890,409339115378,510999335890,
-            ],
-            borderWidth: 1,
-            backgroundColor: 'rgba(55, 154, 214, .7)',
-            borderColor: 'rgba(255, 255, 255, 1)',
-            fill: true
-          }, {
-            tension: .3,
-            label: 'Usaha Mikro',
-            data: [
-              709686901322,834500123650,994849111374,807339115378,680999335890,521686901322,534500123650,709849111374,819339115378,613999335890,513339115378,740999335890,
-            ],
-            borderWidth: 1,
-            backgroundColor: 'rgba(0, 151, 137, .7)',
-            borderColor: 'rgba(255, 255, 255, 1)',
-            fill: true
-          }
-        ]
-      },
-      options: {
-        scales: {
-          x: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          },
-          y: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          }
-        },
-        elements: {
-          point: {
-            radius: 0
-          }
-        },
-        hover: {
-          mode: 'index',
-          intersect: false
-        },
-        plugins: {
-          legend: {
-            labels: {
-              usePointStyle: true,
-              boxWidth: 6,
-              pointStyle: 'circle'
-            }
-          }
-        },
-        responsive: true,
-        maintainAspectRatio: false,
-        bezierCurve: true
-      }
-    });
-  </script>
-  <script>
-    let totalInvestasi2024 = document
-      .getElementById('investasi-2024')
-      .getContext('2d');
-    let totalInvestasi2024Chart = new Chart(totalInvestasi2024, {
-      type: 'line',
-      data: {
-        labels: [
-          "Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","October","November","Dessember",
-        ],
-        datasets: [
-          {
-            tension: .3,
-            label: 'LKPM',
-            data: [
-              324686901322,434500123650,904849111374,409339115378,510999335890,324686901322,434500123650,904849111374,409339115378,510999335890,409339115378,510999335890,
-            ],
-            borderWidth: 1,
-            backgroundColor: 'rgba(55, 154, 214, .7)',
-            borderColor: 'rgba(255, 255, 255, 1)',
-            fill: true
-          }, {
-            tension: .3,
-            label: 'Usaha Mikro',
-            data: [
-              709686901322,834500123650,994849111374,807339115378,680999335890,521686901322,534500123650,709849111374,819339115378,613999335890,513339115378,740999335890,
+              155059507342,261166467868,421653307591,151583891553,
             ],
             borderWidth: 1,
             backgroundColor: 'rgba(0, 151, 137, .7)',
@@ -710,17 +483,17 @@
       .getElementById('lkpm-semua')
       .getContext('2d');
     let totalChartLKPMSemua = new Chart(totalLKPMsemua, {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: [
-          "2022", "2023", "2024",
+          "2021", "2022", "2023", "2024",
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
-              214184207082,207514690446,5914335018,
+              127775390787,214184207082,207514690446,5914335018,
             ],
             borderWidth: 1,
             backgroundColor: 'rgba(0, 151, 137, .7)',
@@ -765,6 +538,66 @@
     });
   </script>
   <script>
+    let totalLKPM2021 = document
+      .getElementById('lkpm-2021')
+      .getContext('2d');
+    let totalChartLKPM2021 = new Chart(totalLKPM2021, {
+      type: 'bar',
+      data: {
+        labels: [
+          "Triwulan I", "Triwulan II", "Triwulan III", "Triwulan IV",
+        ],
+        datasets: [
+          {
+            tension: .3,
+            label: '',
+            data: [
+              59211645619,48240982594,2270234492,18052528082,
+            ],
+            borderWidth: 1,
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
+            fill: true
+          },
+        ]
+      },
+      options: {
+        scales: {
+          x: {
+            stacked: true,
+            grid: {
+              display: false
+            }
+          },
+          y: {
+            stacked: true,
+            grid: {
+              display: false
+            }
+          }
+        },
+        elements: {
+          point: {
+            radius: 0
+          }
+        },
+        hover: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: true,
+        barThickness: 50,
+      }
+    });
+  </script>
+  <script>
     let totalLKPM2022 = document
       .getElementById('lkpm-2022')
       .getContext('2d');
@@ -776,7 +609,7 @@
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
               32290735715,73035645888,60731684206,48126141273,
@@ -819,7 +652,8 @@
         },
         responsive: true,
         maintainAspectRatio: false,
-        bezierCurve: true
+        bezierCurve: true,
+        barThickness: 50,
       }
     });
   </script>
@@ -835,7 +669,7 @@
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
               9623803292,50454357916,92225888174,55210641064,
@@ -878,7 +712,8 @@
         },
         responsive: true,
         maintainAspectRatio: false,
-        bezierCurve: true
+        bezierCurve: true,
+        barThickness: 50,
       }
     });
   </script>
@@ -894,7 +729,7 @@
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
               5914335018,0,0,0,
@@ -937,7 +772,8 @@
         },
         responsive: true,
         maintainAspectRatio: false,
-        bezierCurve: true
+        bezierCurve: true,
+        barThickness: 50,
       }
     });
   </script>
@@ -947,17 +783,17 @@
       .getElementById('mikro-semua')
       .getContext('2d');
     let totalChartMikroSemua = new Chart(totalMikrosemua, {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: [
-          "2022", "2023", "2024",
+          "2021", "2022", "2023", "2024 (Jan-Apr)",
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
-              261166467868,421653307591,151583891553,
+              155059507342,261166467868,421653307591,151583891553,
             ],
             borderWidth: 1,
             backgroundColor: 'rgba(0, 151, 137, .7)',
@@ -1002,6 +838,66 @@
     });
   </script>
   <script>
+    let totalMikro2021 = document
+      .getElementById('mikro-2021')
+      .getContext('2d');
+    let totalChartMikro2021 = new Chart(totalMikro2021, {
+      type: 'bar',
+      data: {
+        labels: [
+          "Triwulan I", "Triwulan II", "Triwulan III", "Triwulan IV",
+        ],
+        datasets: [
+          {
+            tension: .3,
+            label: '',
+            data: [
+              18971947400,23763430036,4186595000,108137534906,
+            ],
+            borderWidth: 1,
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
+            fill: true
+          },
+        ]
+      },
+      options: {
+        scales: {
+          x: {
+            stacked: true,
+            grid: {
+              display: false
+            }
+          },
+          y: {
+            stacked: true,
+            grid: {
+              display: false
+            }
+          }
+        },
+        elements: {
+          point: {
+            radius: 0
+          }
+        },
+        hover: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: true,
+        barThickness: 50,
+      }
+    });
+  </script>
+  <script>
     let totalMikro2022 = document
       .getElementById('mikro-2022')
       .getContext('2d');
@@ -1013,7 +909,7 @@
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
               64450209090,70917140278,57973468500,67825650000,
@@ -1056,7 +952,8 @@
         },
         responsive: true,
         maintainAspectRatio: false,
-        bezierCurve: true
+        bezierCurve: true,
+        barThickness: 50,
       }
     });
   </script>
@@ -1072,7 +969,7 @@
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
               105629159137,71868461097,121632024268,122523663089,
@@ -1115,7 +1012,8 @@
         },
         responsive: true,
         maintainAspectRatio: false,
-        bezierCurve: true
+        bezierCurve: true,
+        barThickness: 50,
       }
     });
   </script>
@@ -1131,7 +1029,7 @@
         ],
         datasets: [
           {
-            tension: 0,
+            tension: .3,
             label: '',
             data: [
               151583891553,0,0,0,
@@ -1174,7 +1072,8 @@
         },
         responsive: true,
         maintainAspectRatio: false,
-        bezierCurve: true
+        bezierCurve: true,
+        barThickness: 50,
       }
     });
   </script>
@@ -1233,15 +1132,15 @@
     function thisComponent() {
       return {
         izin: [
-          { title: 'Januari 2024', count: '894', status: '+171', statusIcon: 'solar:map-arrow-up-bold' },
-          { title: 'Februari 2024', count: '1.219', status: '+373', statusIcon: 'solar:map-arrow-up-bold' },
-          { title: 'Maret 2024', count: '1.735', status: '+729', statusIcon: 'solar:map-arrow-up-bold' },
-          { title: 'April 2024', count: '1.076', status: '+526', statusIcon: 'solar:map-arrow-up-bold' },
+          { title: 'Januari - Desember 2021', count: '6.378', status: '', statusIcon: 'material-symbols:rocket-launch' },
+          { title: 'Januari - Desember 2022', count: '9.661', status: '+3.283', statusIcon: 'solar:map-arrow-up-bold' },
+          { title: 'Januari - Desember 2023', count: '16.437', status: '+6.776', statusIcon: 'solar:map-arrow-up-bold' },
+          { title: 'Januari - April 2024', count: '4.924', status: '', statusIcon: 'heroicons:arrow-path' },
         ],
         mpp: [
           { title: 'Januari - Desember 2021', count: '26.948', status: '', statusIcon: 'material-symbols:rocket-launch' },
-          { title: 'Januari - Desember 2022', count: '31.568', status: '+4620', statusIcon: 'solar:map-arrow-up-bold' },
-          { title: 'Januari - Desember 2023', count: '27.385', status: '-4183', statusIcon: 'solar:map-arrow-down-bold' },
+          { title: 'Januari - Desember 2022', count: '31.568', status: '+4.620', statusIcon: 'solar:map-arrow-up-bold' },
+          { title: 'Januari - Desember 2023', count: '27.385', status: '-4.183', statusIcon: 'solar:map-arrow-down-bold' },
           { title: 'Januari - April 2024', count: '7.542', status: '', statusIcon: 'heroicons:arrow-path' },
         ],
       }
