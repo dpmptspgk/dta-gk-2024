@@ -111,6 +111,34 @@
           </template>
         </div>
         <div class="is-stats--content row mb-3">
+          <h4 class="color-main fw-bold text-start mb-3">Total Perizinan Berusaha OSS RBA</h4>
+          <template x-for="(stat, index) in ossrba" :key="index">
+            <div class="col-md-3 mb-4">
+              <div class="card have-bg">
+                <div class="p-3 p-md-2 p-lg-3">
+                  <h2 class="is-title" x-text="stat.title"></h2>
+                  <div class="is-number">
+                    <div class="is-odd col-6">
+                      <h3 class="is-count" :class="index % 4 === 0 ? 'text-success' : (index % 4 === 1 ? 'text-primary' : (index % 4 === 2 ? 'text-warning' : 'text-info'))" x-text="stat.count"></h3>
+                    </div>
+                    <div class="is-even col-6">
+                      <h3 class="is-status">
+                        <span class="d-flex align-items-center justify-content-center">
+                          <iconify-icon :icon="stat.statusIcon"></iconify-icon>
+                        </span>&nbsp;
+                        <span class="d-flex align-items-center justify-content-center" x-text="stat.status"></span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <canvas :id="'statGraphOSSRBA' + (index + 1)" height="100"></canvas>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+        <div class="is-stats--content row mb-3">
           <h4 class="color-main fw-bold text-start mb-3">Total Pengunjung MPP</h4>
           <template x-for="(stat, index) in mpp" :key="index">
             <div class="col-md-3 mb-4">
@@ -267,16 +295,16 @@
     document.addEventListener("DOMContentLoaded", function () {
       const chartData = [
         [
-          0,0,85,0,0,8,0,20,16,6,1,1,4,3,3,0,0,2,0,0,0,0,1,3,1,0,2,0,0,0,0,0,0,0,30,688,20,0
+          7,8,17,281,1,396,13,102,287,96,4,1,109,44,3,0,0,11,0,0,0,10,2,20,3,0,13,1,22,0,0,0,2,0,1,0,0,
         ],
         [
-          0,0,64,27,0,7,0,10,7,9,0,0,6,1,3,0,0,2,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,23,1012,46,0
+          3,4,614,103,0,224,7,242,450,225,17,3,75,41,10,0,0,16,0,0,0,33,13,26,0,0,29,9,0,14,0,0,1,0,483,213,14,
         ],
         [
-          0,0,59,2,0,4,1,45,23,4,2,0,9,8,1,1,0,2,0,0,0,2,0,3,0,0,4,0,0,0,0,0,0,0,12,1530,23,0
+          6,6,422,128,2,204,11,246,243,179,5,4,74,37,6,1,0,10,0,0,0,27,12,38,1,0,37,7,31,1,13,0,2,0,848,175,9,
         ],
         [
-          0,1,6,0,0,4,1,16,21,9,2,0,10,0,2,0,0,2,0,0,0,0,1,5,0,0,5,0,0,0,1,0,0,0,16,928,46,0
+          0,1,214,29,0,23,2,91,67,28,5,1,29,12,9,1,0,8,0,0,0,2,2,12,1,0,11,0,0,0,1,0,1,0,81,135,0,
         ],
       ];
 
@@ -286,10 +314,10 @@
           .getContext('2d');
 
         const chartConfig = {
-          type: 'line',
+          type: 'bar',
           data: {
             labels: [
-              "SKP", "Reklame", "PBG", "SLF", "SKBKB", "KRK", "LKS", "Dokter", "SIPP", "SIPB", "SIPTGM", "SIPPA", "SIPA", "SIPTTK", "SIPF", "SIPOT", "SIPTW", "SIKR", "SIKROO", "SIPOO", "SIKTG", "SIPTG", "SIKTS", "SIKPM", "SIPPK", "SIPTKTJ", "SIPATLM", "SIPAE", "ITG", "SIKTTD", "STPT", "SIVET", "SIPDRH", "SIPVP", "PKKPR-NB", "Izin Usaha", "PB-UMKU", "PKKPR-B",
+              "SKP", "Reklame", "PBG", "SLF", "SKBKB", "KRK", "LKS", "Dokter", "SIPP", "SIPB", "SIPTGM", "SIPPA", "SIPA", "SIPTTK", "SIPF", "SIPOT", "SIPTW", "SIKR", "SIKROO", "SIPOO", "SIKTG", "SIPTG", "SIKTS", "SIKPM", "SIPPK", "SIPTKTJ", "SIPATLM", "SIPAE", "ITG", "SIKTTD", "STPT", "SIVET", "SIPDRH", "SIPVP", "PKKPR-NB", "PB-UMKU", "PKKPR-B",
             ],
             datasets: [
               {
@@ -304,6 +332,77 @@
             ]
           },
           options: {
+            scales: {
+              x: {
+                display: false
+              },
+              y: {
+                display: false
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            },
+            elements: {
+              point: {
+                radius: 0
+              }
+            },
+            hover: {
+              mode: 'index',
+              intersect: false
+            }
+          }
+        };
+
+        new Chart(chartCanvas, chartConfig);
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const chartData = [
+        [
+          1414,210,181,138,
+        ],
+        [
+          4788,631,8,25,
+        ],
+        [
+          11560,2041,17,34,
+        ],
+        [
+          3674,474,4,6,
+        ],
+      ];
+
+      for (let i = 1; i <= 8; i++) {
+        const chartCanvas = document
+          .getElementById(`statGraphOSSRBA${i}`)
+          .getContext('2d');
+
+        const chartConfig = {
+          type: 'bar',
+          data: {
+            labels: [
+              "Risiko Rendah", "Risiko Menengah Rendah", "Risiko Menengah Tinggi", "Risiko Tinggi",
+            ],
+            datasets: [
+              {
+                label: "",
+                data: chartData[i - 1],
+                borderColor: "#8b6f4e",
+                borderWidth: 1,
+                backgroundColor: "rgba(230, 208, 190, .5)",
+                tension: .4,
+                fill: true
+              }
+            ]
+          },
+          options: {
+            indexAxis: 'y',
             scales: {
               x: {
                 display: false
@@ -1136,6 +1235,12 @@
           { title: 'Januari - Desember 2022', count: '9.661', status: '+3.283', statusIcon: 'solar:map-arrow-up-bold' },
           { title: 'Januari - Desember 2023', count: '16.437', status: '+6.776', statusIcon: 'solar:map-arrow-up-bold' },
           { title: 'Januari - April 2024', count: '4.924', status: '', statusIcon: 'heroicons:arrow-path' },
+        ],
+        ossrba: [
+          { title: 'Januari - Desember 2021', count: '1.943', status: '', statusIcon: 'material-symbols:rocket-launch' },
+          { title: 'Januari - Desember 2022', count: '5.452', status: '+3.509', statusIcon: 'solar:map-arrow-up-bold' },
+          { title: 'Januari - Desember 2023', count: '13.652', status: '+8.200', statusIcon: 'solar:map-arrow-up-bold' },
+          { title: 'Januari - April 2024', count: '4.158', status: '', statusIcon: 'heroicons:arrow-path' },
         ],
         mpp: [
           { title: 'Januari - Desember 2021', count: '26.948', status: '', statusIcon: 'material-symbols:rocket-launch' },
