@@ -83,7 +83,7 @@
     <div class="container">
       <div class="is-content--wrapper">
         <div class="is-stats--content row mb-3">
-          <h4 class="color-palebrown text-start mb-3">Total Izin Terbit</h4>
+          <h4 class="color-main fw-bold text-start mb-3">Total Izin Terbit</h4>
           <template x-for="(stat, index) in izin" :key="index">
             <div class="col-md-3 mb-4">
               <div class="card have-bg">
@@ -111,7 +111,7 @@
           </template>
         </div>
         <div class="is-stats--content row mb-3">
-          <h4 class="color-palebrown text-start mb-3">Total Pengunjung MPP</h4>
+          <h4 class="color-main fw-bold text-start mb-3">Total Pengunjung MPP</h4>
           <template x-for="(stat, index) in mpp" :key="index">
             <div class="col-md-3 mb-4">
               <div class="card have-bg">
@@ -160,7 +160,7 @@
             <div id="pills-investasi" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pills-investasi-tab" tabindex="0">
               <div class="card card-stats">
                 <div class="card-header">
-                  <h6 id="investasi-title" class="mb-0">Laporan Kegiatan Penanaman Modal (LKPM) dan Usaha Mikro</h6>
+                  <h6 id="investasi-title" class="mb-0 color-dark-cyan">Laporan Kegiatan Penanaman Modal (LKPM) dan Usaha Mikro</h6>
                   <div class="dropdown-center">
                     <button type="button" class="btn is-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pilih Tahun</button>
                     <ul class="dropdown-menu">
@@ -182,7 +182,7 @@
             <div id="pills-lkpm" class="tab-pane fade" role="tabpanel" aria-labelledby="pills-lkpm-tab" tabindex="0">
               <div class="card card-stats">
                 <div class="card-header">
-                  <h6 id="lkpm-title" class="mb-0">Laporan Kegiatan Penanaman Modal (LKPM)</h6>
+                  <h6 id="lkpm-title" class="mb-0 color-dark-cyan">Laporan Kegiatan Penanaman Modal (LKPM)</h6>
                   <div class="dropdown-center">
                     <button type="button" class="btn is-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pilih Tahun</button>
                     <ul class="dropdown-menu">
@@ -202,26 +202,26 @@
               </div>
             </div>
             <div id="pills-mikro" class="tab-pane fade" role="tabpanel" aria-labelledby="pills-mikro-tab" tabindex="0">
-                <div class="card card-stats">
-                    <div class="card-header">
-                        <h6 id="mikro-title" class="mb-0">Usaha Mikro</h6>
-                        <div class="dropdown-center">
-                            <button type="button" class="btn is-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pilih Tahun</button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" data-canvas="mikro-semua">Semua</a></li>
-                                <li><a class="dropdown-item" href="#" data-canvas="mikro-2024">2024</a></li>
-                                <li><a class="dropdown-item" href="#" data-canvas="mikro-2023">2023</a></li>
-                                <li><a class="dropdown-item" href="#" data-canvas="mikro-2022">2022</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="mikro-semua" height="350"></canvas>
-                        <canvas id="mikro-2024" height="350" style="display: none;"></canvas>
-                        <canvas id="mikro-2023" height="350" style="display: none;"></canvas>
-                        <canvas id="mikro-2022" height="350" style="display: none;"></canvas>
-                    </div>
+              <div class="card card-stats">
+                <div class="card-header">
+                  <h6 id="mikro-title" class="mb-0 color-dark-cyan">Usaha Mikro</h6>
+                  <div class="dropdown-center">
+                    <button type="button" class="btn is-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pilih Tahun</button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#" data-canvas="mikro-semua">Semua</a></li>
+                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2024">2024</a></li>
+                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2023">2023</a></li>
+                      <li><a class="dropdown-item" href="#" data-canvas="mikro-2022">2022</a></li>
+                    </ul>
+                  </div>
                 </div>
+                <div class="card-body">
+                  <canvas id="mikro-semua" height="350"></canvas>
+                  <canvas id="mikro-2024" height="350" style="display: none;"></canvas>
+                  <canvas id="mikro-2023" height="350" style="display: none;"></canvas>
+                  <canvas id="mikro-2022" height="350" style="display: none;"></canvas>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -723,8 +723,8 @@
               214184207082,207514690446,5914335018,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
@@ -782,8 +782,8 @@
               32290735715,73035645888,60731684206,48126141273,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
@@ -841,8 +841,8 @@
               9623803292,50454357916,92225888174,55210641064,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
@@ -900,8 +900,8 @@
               5914335018,0,0,0,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
@@ -960,8 +960,8 @@
               261166467868,421653307591,151583891553,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
@@ -1019,8 +1019,8 @@
               64450209090,70917140278,57973468500,67825650000,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
@@ -1078,8 +1078,8 @@
               105629159137,71868461097,121632024268,122523663089,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
@@ -1137,8 +1137,8 @@
               151583891553,0,0,0,
             ],
             borderWidth: 1,
-            backgroundColor: 'rgba(251, 142, 100, .7)',
-            borderColor: 'rgba(251, 142, 100, .7)',
+            backgroundColor: 'rgba(0, 151, 137, .7)',
+            borderColor: 'rgba(255, 255, 255, 1)',
             fill: true
           },
         ]
